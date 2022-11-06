@@ -1,0 +1,110 @@
+.card{
+    position: relative;
+    width: 200px;
+    height: 140px;
+    padding: 5px;
+    margin-right: 20px;
+    border: 1px dashed #d9d9d9;
+    border-radius: 6px;
+    margin: 300px auto;
+}
+
+.card input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.card input .submit{
+    width: 5%;
+    height: 5%;
+}
+
+.card .view{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .view #icon{
+    display: inline-block;
+    font-size: 30px;
+}
+
+.card .view .img-container{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+
+.img-container img{
+    width: 100%;
+    height: 100%;
+}
+
+.img-container .img-mask{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background: rgba(0,0,0,.3);
+    transition: all .5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-container:hover .img-mask{
+    opacity: 1;
+}
+
+.img-mask span{
+    color: #fff;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+/*modal样式*/
+#modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 0;
+    height: 0;
+    box-shadow: 0 0 10px #d9d9d9;
+    background: rgba(0,0,0,.3);
+    overflow: hidden;
+}
+
+#modal .content{
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: 45px 20px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+#modal #modalImg{
+    height: 100%;
+}
+
+#modal #closeIcon{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yin.mapper.GoodsMapper">
+
+    <insert id="addSellGoods" parameterType="com.yin.domain.Goods">
+        insert into sc_goods(goods_name,goods_url,goods_message,goods_price,goods_type,goods_createtime,goods_state,user_id,buy_id)
+        values (#{goodsName},#{goodsUrl},#{goodsMessage},#{goodsPrice},#{goodsType},#{goodsCreateTime},#{goodsState},#{userId},#{buyId})
+    </insert>
+
+    <delete id="deleteSellGoods" parameterType="com.yin.domain.Goods">
+        delete from sc_goods where goods_id = #{goodsId}
+    </delete>
+
+    <select id="list" resultType="com.yin.domain.Goods">
+        select * from sc_goods
+    </select>
+
+</mapper>

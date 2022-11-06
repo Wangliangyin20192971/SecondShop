@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yin.mapper.UserMapper">
+
+    <update id="editUser">
+        update sc_user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="userId != null">
+                <if test="userName != null">
+                    user_name = #{userName},
+                </if>
+                <if test="userPassword != null">
+                    user_password = #{userPassword},
+                </if>
+                <if test="userSex != null">
+                    user_sex = #{userSex},
+                </if>
+                <if test="userBuilding != null">
+                    user_building = #{userBuilding},
+                </if>
+                <if test="userRoom != null">
+                    user_room = #{userRoom}
+                </if>
+            </if>
+        </trim>
+        where user_id = #{userId}
+    </update>
+
+    <insert id="addUser" parameterType="com.yin.domain.User">
+        insert into sc_user(user_name,user_password,user_sex,user_building,user_room)
+        values (#{userName},#{userPassword},#{userSex},#{userBuilding},#{userRoom})
+    </insert>
+
+</mapper>
